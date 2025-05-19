@@ -1,6 +1,6 @@
 import axios from "axios";
 import { API_BASE_URL } from "./constant";
-
+import { toast } from "sonner";
 
 export const api = axios.create({
   baseURL: API_BASE_URL,
@@ -16,3 +16,15 @@ api.interceptors.request.use((config) => {
   }
   return config;
 });
+
+// api.interceptors.response.use(
+//   (response) => response,
+//   (error) => {
+//     const message =
+//       error?.response?.data?.message || error.message || "Something went wrong";
+//     if (error?.response?.status !== 401) {
+//       toast.error(message);
+//     }
+//     return Promise.reject(error);
+//   }
+// );
