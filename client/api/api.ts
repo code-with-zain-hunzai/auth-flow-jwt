@@ -1,6 +1,6 @@
 import axios from "axios";
 import { API_BASE_URL } from "./constant";
-import { toast } from "sonner";
+// import { toast } from "sonner";
 
 export const api = axios.create({
   baseURL: API_BASE_URL,

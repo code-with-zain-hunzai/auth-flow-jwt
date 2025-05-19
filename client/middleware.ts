@@ -16,7 +16,7 @@ export function middleware(request: NextRequest) {
 
   if (
     token &&
-    [Routes.SIGNIN, Routes.SIGNUP].includes(request.nextUrl.pathname)
+    [Routes.SIGNIN, Routes.SIGNUP].includes(request.nextUrl.pathname as Routes)
   ) {
     return NextResponse.redirect(new URL(Routes.TODOS, request.url));
   }
