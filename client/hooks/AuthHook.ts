@@ -28,8 +28,11 @@ export const useSignIn = () => {
   return useMutation({
     mutationFn: (data: SignInPayload) => signIn(data),
     onSuccess: (response) => {
-      if (response?.message && response.user) {
-        toast.success(response.message);
+      const hasUser = Boolean(response.user);
+      if (hasUser) {
+        const welcomeMessage =
+          response.message || `Welcome back, ${response.user?.email ?? ""}`;
+        toast.success(welcomeMessage);
         router.push(Routes.TODOS);
       } else {
         toast.warning("Login successful but no user data received");
