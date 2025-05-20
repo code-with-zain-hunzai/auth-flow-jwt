@@ -12,7 +12,7 @@ export const STATUS = {
 
 export const COOKIE_OPTIONS = {
   TOKEN_COOKIE_NAME: "token",
-  COOKIE_MAX_AGE: 1000 * 60,
+  COOKIE_MAX_AGE: 1000 * 60 * 60,
   COOKIE_PROPERTIES: {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
